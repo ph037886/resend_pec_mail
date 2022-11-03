@@ -8,8 +8,8 @@ import pandas as pd
 import chrome_helper
 from time import sleep
 
-def check_mail():
-    person=pd.read_excel(r'file/111年教補問卷名單.xlsx')
+def check_mail(): #寄測試信
+    person=pd.read_excel(r'file/教補問卷名單.xlsx')
 
     options = webdriver.ChromeOptions()
     #options.add_argument('--headless')
@@ -30,8 +30,8 @@ def check_mail():
         driver.switch_to.alert.accept()
         i+=1
 
-def re_send_mail():
-    person=pd.read_excel(r'file/111年教補問卷名單.xlsx')
+def re_send_mail(): #重寄密碼信件
+    person=pd.read_excel(r'file/教補問卷名單.xlsx')
 
     options = webdriver.ChromeOptions()
     #options.add_argument('--headless')
@@ -50,5 +50,3 @@ def re_send_mail():
         driver.find_element('name',"btnSendSN").click()
         driver.switch_to.alert.accept()
         i+=1
-        
-re_send_mail()
